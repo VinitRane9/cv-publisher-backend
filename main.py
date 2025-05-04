@@ -3,6 +3,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+import os
+import openai
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+
 # CORS setup - allow frontend to communicate with backend
 app.add_middleware(
     CORSMiddleware,
